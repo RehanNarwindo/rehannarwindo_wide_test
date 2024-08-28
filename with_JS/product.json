@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Hoodie Polos",
+        "price": 150000
+    },
+    {
+        "name": "Kaos Polos",
+        "price": 60000
+    },
+    {
+        "name": "Jaket Kulit",
+        "price": 250000
+    },
+    {
+        "name": "Celana Jeans",
+        "price": 160000
+    },
+    {
+        "name": "Celana Panjang",
+        "price": 140000
+    },
+    {
+        "name": "Celana Pendek",
+        "price": 50000
+    },
+    {
+        "name": "Kemeja",
+        "price": 120000
+    },
+    {
+        "name": "Kaos Oblong",
+        "price": 80000
+    },
+    {
+        "name": "Kaos Distro",
+        "price": 100000
+    },
+    {
+        "name": "Kemeja Flanel",
+        "price": 130000
+    }
+]
