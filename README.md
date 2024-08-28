@@ -243,7 +243,23 @@ method : POST
 ```
 
 
+## Global Error
 
+_Response (401 - Unauthorized)_
+
+```json
+{
+  "message": "Unauthenticated"
+}
+```
+
+_Response (500 - Internal Server Error)_
+
+```json
+{
+  "message": "Internal server error"
+}
+```
 
 
 
