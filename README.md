@@ -17,6 +17,8 @@
 
 ## 1. REGISTER => /register
 method : POST
+
+### REQUEST
 body : 
 ```JSON
 {
@@ -25,18 +27,36 @@ body :
   "address":"your_address"
 }
 ```
-status : 
-### 401 create
+### RESPONSE
+
+-  Response (201 - Create )
 ```JSON
 {
-  "id": 2,
-  "name": "test1",
-  "address": "test123"
+  "id": your_id,
+  "name": "your_name",
+  "address": "your_password"
 }
 ```
 
+- Response (400 - Bad Request)
+
+```json
+{
+  "message": "name is required"
+}
+OR
+{
+  "message": "password is required"
+}
+OR
+{
+  "message": "address is required"
+}
+
+```
 ## 2. LOGIN => /login
 method : POST
+### Request
 body : 
 ```JSON
 {
@@ -44,14 +64,78 @@ body :
   "password":"your_password"
 }
 ```
-status : 
-### 400 OK
+### Response
+- Response (200 - OK )
 ```JSON
 {
   "access_token": "your_access_token"
 }
 ```
 
+- Response (400 - Bad Request)
+
+```json
+{
+  "message": "name is required"
+}
+OR
+{
+  "message": "password is required"
+}
+```
+
+- Response (401 - Unauthorized)
+
+```json
+{
+  "message": "name/password is invalid"
+}
+```
+
 ## 3. PRODUCT => /product
+
 method : GET
+
+### Request
+- headers:
+
+```json
+{
+  "access_token": "bearer string"
+}
+```
+
+- query : 
+```JSON
+{
+  "page":"<number_page>"
+}
+```
+### Response
+
+- Response (200 - OK)
+```JSON
+{
+  "total": 10,
+  "size": 2,
+  "totalPage": 5,
+  "currentPage": 1,
+  "data": [
+  {
+      "id": 1,
+      "name": "Hoodie Polos",
+      "price": 150000,
+      "createdAt": "2024-08-27T18:44:29.902Z",
+      "updatedAt": "2024-08-27T18:44:29.902Z"
+    },
+    {
+      "id": 2,
+      "name": "Kaos Polos",
+      "price": 60000,
+      "createdAt": "2024-08-27T18:44:29.902Z",
+      "updatedAt": "2024-08-27T18:44:29.902Z"
+    }
+  ]
+}
+```
 
