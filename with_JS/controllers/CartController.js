@@ -23,7 +23,9 @@ class CartController {
     static async addCart(req, res, next) {
         try {
             const { ProductId, type, quatity } = req.body;
-
+            if (!ProductId) {
+                throw { name: "ProductIdRequired" };
+            }
             const haveInCart = await Cart.findOne({
                 where: {
                     ProductId,

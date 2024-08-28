@@ -20,6 +20,9 @@ const errorHandler = (err, req, res, next) => {
     } else if (err.name === "ProductNotFound") {
         status = 404;
         message = "Product not found";
+    } else if (err.name === "ProductIdRequired") {
+        status = 400;
+        message = "ProductId is required";
     }
     res.status(status).json({ message });
 };
