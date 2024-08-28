@@ -139,3 +139,119 @@ method : GET
 }
 ```
 
+## 4. CART => /cart
+
+method : GET
+
+### Request
+- headers:
+
+```json
+{
+  "access_token": "bearer string"
+}
+```
+
+### Response
+
+- Response (200 - OK)
+```JSON
+[
+  {
+    "id": 5,
+    "ProductId": 6,
+    "type": "pria",
+    "quatity": 2,
+    "total": 100000,
+    "UserId": 2,
+    "createdAt": "2024-08-27T19:46:17.209Z",
+    "updatedAt": "2024-08-27T19:47:11.223Z",
+    "Product": {
+      "id": 6,
+      "name": "Celana Pendek",
+      "price": 50000,
+      "createdAt": "2024-08-27T18:44:29.902Z",
+      "updatedAt": "2024-08-27T18:44:29.902Z"
+    }
+  },
+  {
+    "id": 6,
+    "ProductId": 5,
+    "type": "",
+    "quatity": 2,
+    "total": 280000,
+    "UserId": 2,
+    "createdAt": "2024-08-28T10:32:47.104Z",
+    "updatedAt": "2024-08-28T10:32:53.186Z",
+    "Product": {
+      "id": 5,
+      "name": "Celana Panjang",
+      "price": 140000,
+      "createdAt": "2024-08-27T18:44:29.902Z",
+      "updatedAt": "2024-08-27T18:44:29.902Z"
+    }
+  }
+]
+```
+
+## 4. CART => /cart
+
+method : POST
+
+### Request
+- headers:
+
+```json
+{
+  "access_token": "bearer string"
+}
+```
+
+- body :
+```JSON
+
+{
+  "ProductId": "product_Id",
+  "type": "type_product",
+  "quatity": 1
+}
+```
+
+### Response 
+
+- Response (200 - OK)
+
+```JSON
+{
+  "id": 6,
+  "ProductId": 5,
+  "type": "",
+  "quatity": 2,
+  "total": 280000,
+  "UserId": 2,
+  "createdAt": "2024-08-28T10:32:47.104Z",
+  "updatedAt": "2024-08-28T10:32:53.186Z"
+}
+```
+
+- Response (400 - Bad Request )
+
+```JSON
+{
+  "message": "ProductId is required"
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
